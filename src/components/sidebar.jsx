@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarItem from './sidebar_item';
+import SidebarItemContainer from './sidebar_item_container';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -12,30 +12,24 @@ class Sidebar extends React.Component {
         },
         Armor: {
           Chest: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
-          Helm: [],
-          Boots: [],
+          Helm: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
+          Boots: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
         }
       }
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  
-  handleClick(item) {
-    return () => {
-      this.props.history.push(`/${item}`);
     };
   }
   
   render () {
+    // "section" is a broad category (weapons, armor)
+    // subCats is a subsection (helm, boots)
+    // items are the specific types (AR, ES)
     const cats = this.state.categories;
     const renderedCats = Object.keys(cats).map(cat => {
       const subCats = Object.keys(cats[cat]).map(subCat => {
-        return <SidebarItem
+        return <SidebarItemContainer
           key={subCat}
           subCat={subCat}
-          items={cats[cat][subCat]}
-          selectItem={this.handleClick}
-          currentItem={this.props.currentItem}/>;
+          items={cats[cat][subCat]} />;
       });
       
       return (

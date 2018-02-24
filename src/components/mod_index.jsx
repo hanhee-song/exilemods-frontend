@@ -10,7 +10,7 @@ class ModIndex extends React.Component {
     // Hardcoded stuff for styling
     return (
       <div className="mod-index">
-        <div className="mod-index__name">{this.props.currentItem}</div>
+        <div className="mod-index__name">Mod Index {this.props.currentItem}</div>
         
       </div>
     );

@@ -104,8 +104,6 @@ body {
       color: #8888ff;
       font-size: 17px;
       line-height: 24px; }
-      .sidebar .sidebar__section .section__item:hover {
-        background-color: #333; }
       .sidebar .sidebar__section .section__item .section__item-title {
         padding-left: 10px; }
     .sidebar .sidebar__section .section__dropdown {

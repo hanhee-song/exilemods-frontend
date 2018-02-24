@@ -12,10 +12,17 @@ class SidebarItem extends React.Component {
     };
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.renderDropdown = this.renderDropdown.bind(this);
+    this.handleClickItem = this.handleClickItem.bind(this);
   }
   
   toggleDropdown() {
     this.setState({ showDropdown: !this.state.showDropdown });
+  }
+  
+  handleClickItem(item) {
+    return () => {
+      this.props.receiveCurrentItem(item);
+    };
   }
   
   renderDropdown() {
@@ -23,7 +30,7 @@ class SidebarItem extends React.Component {
       const active = this.props.currentItem === item ? "active" : "";
       return (
         <div className={`dropdown__item selectable ${active}`}
-          onClick={this.props.selectItem(item)}
+          onClick={this.handleClickItem(item)}
           key={item} >
           {item}
         </div>
