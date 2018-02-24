@@ -148,8 +148,7 @@ body {
   width: calc(100% - 200px); }
   .mod-main .mod-main__name {
     font-size: 22px;
-    color: #dfcf99;
-    margin-bottom: 20px; }
+    color: #dfcf99; }
   .mod-main .mod-main__pins {
     width: 100%; }
 
@@ -158,7 +157,8 @@ body {
   margin-right: 10px; }
   .mod-index .mod-index__title {
     color: #af6025;
-    font-size: 23px; }
+    font-size: 23px;
+    margin: 20px 0 5px 5px; }
 
 .table {
   width: 600px;

@@ -201,7 +201,6 @@ body {
   .mod-main__name {
     font-size: 22px;
     color: $tan;
-    margin-bottom: 20px;
   }
   
   .mod-main__pins {
@@ -222,6 +221,7 @@ $name-width: 160px;
   .mod-index__title {
     color: $brown;
     font-size: 23px;
+    margin: 20px 0 5px 5px;
   }
 }
 
