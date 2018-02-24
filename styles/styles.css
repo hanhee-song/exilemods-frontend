@@ -156,9 +156,9 @@ body {
   font-size: 23px; }
 
 .table {
-  width: 650px;
+  width: 600px;
   color: #dfcf99;
-  font-family: "Verana", sans-serif;
+  font-family: sans-serif;
   font-size: 13px; }
   .table .table__cell {
     border: 2px solid #000;

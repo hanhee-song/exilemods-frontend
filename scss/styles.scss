@@ -207,7 +207,7 @@ body {
 
 // MOD INDEX ====================================
 
-$table-width: 650px;
+$table-width: 600px;
 $ilvl-width: 100px;
 $name-width: 160px;
 
@@ -221,7 +221,8 @@ $name-width: 160px;
 .table {
   width: $table-width;
   color: $tan;
-  font-family: "Verana", sans-serif;
+  font-family: sans-serif;
+  // This is originally Verdana but it's too wide
   font-size: 13px;
   
   .table__cell {
