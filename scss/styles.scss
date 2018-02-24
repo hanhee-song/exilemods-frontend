@@ -203,6 +203,10 @@ body {
     color: $tan;
     margin-bottom: 20px;
   }
+  
+  .mod-main__pins {
+    width: 100%;
+  }
 }
 
 // MOD INDEX ====================================
@@ -212,6 +216,9 @@ $ilvl-width: 100px;
 $name-width: 160px;
 
 .mod-index {
+  float: left;
+  margin-right: 10px;
+  
   .mod-index__title {
     color: $brown;
     font-size: 23px;
@@ -232,13 +239,15 @@ $name-width: 160px;
     position: relative;
     border: 2px solid #000;
     line-height: 17px; // Use line height for this one, not padding
+    &:hover { background-color: #393939;}
     
     .pin-icon {
       float: right;
       background-color: #454545;
-      width: 21px;
+      width: 22px;
       text-align: center;
-      border-left: 1px solid #000;
+      border-left: 2px solid #000;
+      &:hover { background-color: #5a5a5a; }
       
       .fa { transform: rotate(-35deg); }
     }
@@ -248,6 +257,7 @@ $name-width: 160px;
     background-color: #222;
     font-family: 'Inconsolata', monospace;
     font-size: 14px;
+    &:hover { background-color: #292929; }
     
     .table__cell {
       border: 2px solid #000;

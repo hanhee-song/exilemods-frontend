@@ -22150,6 +22150,8 @@ var _mod_index2 = _interopRequireDefault(_mod_index);
 
 var _reactRedux = __webpack_require__(9);
 
+var _pin_actions = __webpack_require__(109);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
@@ -22159,7 +22161,14 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    pinMod: function pinMod(mod) {
+      return dispatch((0, _pin_actions.pinMod)(mod));
+    },
+    unpinMod: function unpinMod(mod) {
+      return dispatch((0, _pin_actions.unpinMod)(mod));
+    }
+  };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_mod_index2.default);
@@ -22195,20 +22204,35 @@ var ModIndex = function (_React$Component) {
   function ModIndex(props) {
     _classCallCheck(this, ModIndex);
 
-    return _possibleConstructorReturn(this, (ModIndex.__proto__ || Object.getPrototypeOf(ModIndex)).call(this, props));
+    // this.props.affix
+    var _this = _possibleConstructorReturn(this, (ModIndex.__proto__ || Object.getPrototypeOf(ModIndex)).call(this, props));
+
+    _this.togglePin = _this.togglePin.bind(_this);
+    return _this;
   }
 
   _createClass(ModIndex, [{
+    key: "togglePin",
+    value: function togglePin(mod) {
+      return function () {
+        // this.props.pin(mod)
+        // this.props.unpin(mod)
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
       // Hardcoded stuff for styling
+
+      // TODO: Once we have pins fully functional, make the thumbtack conditionally
+      // change to an X
       return _react2.default.createElement(
         "div",
         { className: "mod-index" },
         _react2.default.createElement(
           "div",
           { className: "mod-index__title" },
-          "Prefixes"
+          this.props.affix + "es"
         ),
         _react2.default.createElement(
           "table",
@@ -22226,7 +22250,7 @@ var ModIndex = function (_React$Component) {
                 _react2.default.createElement(
                   "div",
                   { className: "pin-icon" },
-                  _react2.default.createElement("i", { "class": "fa fa-thumb-tack" })
+                  _react2.default.createElement("i", { className: "fa fa-thumb-tack" })
                 )
               )
             ),
@@ -22360,7 +22384,7 @@ var _current_item_reducer2 = _interopRequireDefault(_current_item_reducer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var RootReducer = (0, _redux.combineReducers)({
-  pin: _pin_reducer2.default,
+  pins: _pin_reducer2.default,
   items: _item_reducer2.default,
   currentItem: _current_item_reducer2.default
 });
@@ -24735,6 +24759,10 @@ var ModMain = function (_React$Component) {
   _createClass(ModMain, [{
     key: 'render',
     value: function render() {
+
+      // TODO: ModMain will be in charge of filtering and passing down the mods
+      // to the index containers
+
       return _react2.default.createElement(
         'div',
         { className: 'mod-main' },
@@ -24744,7 +24772,14 @@ var ModMain = function (_React$Component) {
           'Mod Main ',
           this.props.currentItem
         ),
-        _react2.default.createElement(_mod_index_container2.default, null)
+        this.props.pins.length > 0 && _react2.default.createElement(
+          'div',
+          { className: 'mod-main__pins' },
+          _react2.default.createElement(_mod_index_container2.default, { affix: "Prefix" }),
+          _react2.default.createElement(_mod_index_container2.default, { affix: "Suffix" })
+        ),
+        _react2.default.createElement(_mod_index_container2.default, { affix: "Prefix" }),
+        _react2.default.createElement(_mod_index_container2.default, { affix: "Suffix" })
       );
     }
   }]);
@@ -24775,7 +24810,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    currentItem: state.currentItem
+    currentItem: state.currentItem,
+    pins: state.pins
   };
 };
 

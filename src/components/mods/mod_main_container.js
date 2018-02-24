@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentItem: state.currentItem
+    currentItem: state.currentItem,
+    pins: state.pins,
   };
 };
 
