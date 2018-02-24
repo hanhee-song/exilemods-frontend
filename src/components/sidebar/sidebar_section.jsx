@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SidebarItem extends React.Component {
+class SidebarSection extends React.Component {
   constructor(props) {
     super(props);
     // this.props = {
@@ -27,7 +27,10 @@ class SidebarItem extends React.Component {
   
   renderDropdown() {
     const dropdownItems = this.props.items.map(item => {
-      const active = this.props.currentItem === item ? "active" : "";
+      // TODO: indicate which section is active once we have ID's, rather
+      // than strings, to indicate the current item.
+      // const active = this.props.currentItem === item ? "active" : "";
+      const active = "";
       return (
         <div className={`dropdown__item selectable ${active}`}
           onClick={this.handleClickItem(item)}
@@ -49,12 +52,10 @@ class SidebarItem extends React.Component {
         <div className="section__item-title selectable" onClick={this.toggleDropdown}>
           {this.props.subCat}
         </div>
-        {
-          this.renderDropdown()
-        }
+        { this.renderDropdown() }
       </div>
     );
   }
 }
 
-export default SidebarItem;
+export default SidebarSection;

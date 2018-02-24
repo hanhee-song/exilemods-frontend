@@ -1,10 +1,10 @@
-import SidebarItem from './sidebar_item';
+import SidebarSection from './sidebar_section';
 import { connect } from 'react-redux';
-import { receiveCurrentItem } from '../actions/item_actions';
+import { receiveCurrentItem } from '../../actions/item_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    
+    // currentItem: state.currentItem
   };
 };
 
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SidebarItem);
+)(SidebarSection);

@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarItemContainer from './sidebar_item_container';
+import SidebarSectionContainer from './sidebar_section_container';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Sidebar extends React.Component {
     const cats = this.state.categories;
     const renderedCats = Object.keys(cats).map(cat => {
       const subCats = Object.keys(cats[cat]).map(subCat => {
-        return <SidebarItemContainer
+        return <SidebarSectionContainer
           key={subCat}
           subCat={subCat}
           items={cats[cat][subCat]} />;
