@@ -108,6 +108,7 @@ body {
 
 .sidebar {
   padding-left: 20px;
+  padding-right: 20px;
   width: 200px;
   float: left;
   // No sticky until we know how long this list is
@@ -115,7 +116,7 @@ body {
   // top: 0;
   
   .sidebar__section {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     
     .section__title {
       color: $brown;
@@ -124,9 +125,20 @@ body {
     }
     
     .section__item {
+      cursor: pointer;
       color: $blue;
       font-size: 17px;
-      line-height: 24px;
+      line-height: 20px;
+      padding: 0 10px;
+      
+      &:hover {
+        background-color: #333;
+      }
+      
+      .active {
+        color: $light-blue;
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -82,18 +82,26 @@ body {
 
 .sidebar {
   padding-left: 20px;
+  padding-right: 20px;
   width: 200px;
   float: left; }
   .sidebar .sidebar__section {
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
     .sidebar .sidebar__section .section__title {
       color: #af6025;
       margin-bottom: 8px;
       font-size: 20px; }
     .sidebar .sidebar__section .section__item {
+      cursor: pointer;
       color: #8888ff;
       font-size: 17px;
-      line-height: 24px; }
+      line-height: 20px;
+      padding: 0 10px; }
+      .sidebar .sidebar__section .section__item:hover {
+        background-color: #333; }
+      .sidebar .sidebar__section .section__item .active {
+        color: #b9b9ff;
+        text-decoration: underline; }
 
 .mod-index {
   float: left;

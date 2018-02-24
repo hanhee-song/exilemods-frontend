@@ -3,56 +3,46 @@ import React from 'react';
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      categories: {
+        Weapons: ["Daggers", "Claws", "Bows"],
+        Armor: ["Chests", "Helms"]
+      }
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick(item) {
+    return () => {
+      this.props.history.push(`/${item}`);
+    };
   }
   
   render () {
-    // INITIAL HARD-CODED INFO FOR SAKE OF STYLING
+    const cats = this.state.categories;
+    const renderedCats = Object.keys(cats).map(cat => {
+      const catItems = cats[cat].map(item => {
+        const active = this.props.currentItem === item ? "active" : "";
+        return (
+          <div className={`section__item ${active}`}
+            key={item}
+            onClick={this.handleClick(item)}>
+            {item}
+          </div>
+        );
+      });
+      
+      return (
+        <div className="sidebar__section" key={cat}>
+          <div className="section__title">{cat}</div>
+          {catItems}
+        </div>
+      );
+    });
+    
     return (
       <div className="sidebar">
-        <div className="sidebar__section">
-          <div className="section__title">Weapons:</div>
-          <div className="section__item">Daggers</div>
-          <div className="section__item">Claws</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-          <div className="section__item">Other Junk</div>
-        </div>
+        {renderedCats}
       </div>
     );
   }

@@ -19035,6 +19035,8 @@ var _reactRedux = __webpack_require__(17);
 
 var _reactRouterDom = __webpack_require__(94);
 
+var _reactRouter = __webpack_require__(120);
+
 var _sidebar_container = __webpack_require__(42);
 
 var _sidebar_container2 = _interopRequireDefault(_sidebar_container);
@@ -19071,8 +19073,8 @@ var App = function (_React$Component) {
           { className: 'title' },
           'ExileMods.com | Path of Exile Item Affixes'
         ),
-        _react2.default.createElement(_sidebar_container2.default, null),
-        _react2.default.createElement(_mod_index_container2.default, null)
+        _react2.default.createElement(_reactRouterDom.Route, { component: _sidebar_container2.default, path: '/:currentItem' }),
+        _react2.default.createElement(_reactRouterDom.Route, { component: _mod_index_container2.default, path: '/:currentItem' })
       );
     }
   }]);
@@ -19727,17 +19729,21 @@ var _sidebar2 = _interopRequireDefault(_sidebar);
 
 var _reactRedux = __webpack_require__(17);
 
+var _reactRouter = __webpack_require__(120);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  return {};
+  return {
+    currentItem: ownProps.match.params.currentItem
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {};
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_sidebar2.default);
+exports.default = (0, _reactRouter.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_sidebar2.default));
 
 /***/ }),
 /* 43 */
@@ -19770,230 +19776,61 @@ var Sidebar = function (_React$Component) {
   function Sidebar(props) {
     _classCallCheck(this, Sidebar);
 
-    return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).call(this, props));
+
+    _this.state = {
+      categories: {
+        Weapons: ["Daggers", "Claws", "Bows"],
+        Armor: ["Chests", "Helms"]
+      }
+    };
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
   }
 
   _createClass(Sidebar, [{
+    key: "handleClick",
+    value: function handleClick(item) {
+      var _this2 = this;
+
+      return function () {
+        _this2.props.history.push("/" + item);
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
-      // INITIAL HARD-CODED INFO FOR SAKE OF STYLING
-      return _react2.default.createElement(
-        "div",
-        { className: "sidebar" },
-        _react2.default.createElement(
+      var _this3 = this;
+
+      var cats = this.state.categories;
+      var renderedCats = Object.keys(cats).map(function (cat) {
+        var catItems = cats[cat].map(function (item) {
+          var active = _this3.props.currentItem === item ? "active" : "";
+          return _react2.default.createElement(
+            "div",
+            { className: "section__item " + active,
+              key: item,
+              onClick: _this3.handleClick(item) },
+            item
+          );
+        });
+
+        return _react2.default.createElement(
           "div",
-          { className: "sidebar__section" },
+          { className: "sidebar__section", key: cat },
           _react2.default.createElement(
             "div",
             { className: "section__title" },
-            "Weapons:"
+            cat
           ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Daggers"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Claws"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "section__item" },
-            "Other Junk"
-          )
-        )
+          catItems
+        );
+      });
+
+      return _react2.default.createElement(
+        "div",
+        { className: "sidebar" },
+        renderedCats
       );
     }
   }]);
@@ -21330,6 +21167,8 @@ var _mod_index2 = _interopRequireDefault(_mod_index);
 
 var _reactRedux = __webpack_require__(17);
 
+var _reactRouter = __webpack_require__(120);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
@@ -21340,7 +21179,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {};
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_mod_index2.default);
+exports.default = (0, _reactRouter.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_mod_index2.default));
 
 /***/ }),
 /* 71 */
@@ -25811,6 +25650,49 @@ var withRouter = function withRouter(Component) {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (withRouter);
+
+/***/ }),
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__ = __webpack_require__(100);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Prompt__ = __webpack_require__(106);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_1__Prompt__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Redirect__ = __webpack_require__(108);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_2__Redirect__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(92);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_3__Route__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(84);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_4__Router__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StaticRouter__ = __webpack_require__(114);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_5__StaticRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Switch__ = __webpack_require__(116);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_6__Switch__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__matchPath__ = __webpack_require__(85);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_7__matchPath__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__withRouter__ = __webpack_require__(119);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_8__withRouter__["a"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***/ })
 /******/ ]);
