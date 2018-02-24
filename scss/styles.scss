@@ -93,6 +93,7 @@ body {
   font-family: fontin_smallcapssmallcaps, Georgia, Serif;
   font-feature-settings: "liga" 0;
   background-color: #000;
+  color: $tan;
 }
 
 .title {
@@ -147,7 +148,6 @@ body {
     }
     
     .section__dropdown {
-      background-color: #111;
       max-height: 0px;
       transition: max-height .1s linear;
       -webkit-transition: max-height .1s linear;

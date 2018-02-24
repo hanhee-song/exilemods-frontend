@@ -70,7 +70,8 @@ a {
 body {
   font-family: fontin_smallcapssmallcaps, Georgia, Serif;
   font-feature-settings: "liga" 0;
-  background-color: #000; }
+  background-color: #000;
+  color: #dfcf99; }
 
 .title {
   font-variant: small-caps;
@@ -107,7 +108,6 @@ body {
       .sidebar .sidebar__section .section__item .section__item-title {
         padding-left: 10px; }
     .sidebar .sidebar__section .section__dropdown {
-      background-color: #111;
       max-height: 0px;
       transition: max-height .1s linear;
       -webkit-transition: max-height .1s linear;
