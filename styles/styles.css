@@ -160,17 +160,28 @@ body {
   color: #dfcf99;
   font-family: sans-serif;
   font-size: 13px; }
-  .table .table__cell {
-    border: 2px solid #000;
-    padding: 3px; }
   .table .table__mod-type {
     background-color: #333;
     cursor: pointer;
-    padding-left: 8px; }
+    padding-left: 8px;
+    position: relative;
+    border: 2px solid #000;
+    line-height: 17px; }
+    .table .table__mod-type .pin-icon {
+      float: right;
+      background-color: #454545;
+      width: 21px;
+      text-align: center;
+      border-left: 1px solid #000; }
+      .table .table__mod-type .pin-icon .fa {
+        transform: rotate(-35deg); }
   .table .table__mod-stat {
     background-color: #222;
     font-family: 'Inconsolata', monospace;
     font-size: 14px; }
+    .table .table__mod-stat .table__cell {
+      border: 2px solid #000;
+      padding: 3px; }
   .table .table__ilvl {
     text-align: center;
     width: 100px; }

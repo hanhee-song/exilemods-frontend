@@ -22222,7 +22222,12 @@ var ModIndex = function (_React$Component) {
               _react2.default.createElement(
                 "td",
                 { colSpan: "3", className: "table__mod-type table__cell" },
-                "+# to max life"
+                "+# to max life",
+                _react2.default.createElement(
+                  "div",
+                  { className: "pin-icon" },
+                  _react2.default.createElement("i", { "class": "fa fa-thumb-tack" })
+                )
               )
             ),
             _react2.default.createElement(

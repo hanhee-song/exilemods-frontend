@@ -13,7 +13,10 @@ class ModIndex extends React.Component {
         <table className="table">
           <tbody>
             <tr>
-              <td colSpan="3" className="table__mod-type table__cell">+# to max life</td>
+              <td colSpan="3" className="table__mod-type table__cell">
+                +# to max life
+                <div className="pin-icon"><i class="fa fa-thumb-tack"></i></div>
+              </td>
             </tr>
             <tr className="table__mod-stat">
               <td className="table__ilvl table__cell">1</td>

@@ -225,21 +225,34 @@ $name-width: 160px;
   // This is originally Verdana but it's too wide
   font-size: 13px;
   
-  .table__cell {
-    border: 2px solid #000;
-    padding: 3px;
-  }
-  
   .table__mod-type {
     background-color: #333;
     cursor: pointer;
     padding-left: 8px;
+    position: relative;
+    border: 2px solid #000;
+    line-height: 17px; // Use line height for this one, not padding
+    
+    .pin-icon {
+      float: right;
+      background-color: #454545;
+      width: 21px;
+      text-align: center;
+      border-left: 1px solid #000;
+      
+      .fa { transform: rotate(-35deg); }
+    }
   }
   
   .table__mod-stat {
     background-color: #222;
     font-family: 'Inconsolata', monospace;
     font-size: 14px;
+    
+    .table__cell {
+      border: 2px solid #000;
+      padding: 3px;
+    }
   }
   
   .table__ilvl {
