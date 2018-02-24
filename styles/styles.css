@@ -93,18 +93,31 @@ body {
       color: #af6025;
       margin-bottom: 8px;
       font-size: 20px; }
+    .sidebar .sidebar__section .selectable.active {
+      color: #b9b9ff;
+      background-color: #222;
+      text-decoration: underline; }
+    .sidebar .sidebar__section .selectable:hover {
+      background-color: #333; }
     .sidebar .sidebar__section .section__item {
       cursor: pointer;
       color: #8888ff;
       font-size: 17px;
-      line-height: 20px;
-      padding: 0 10px; }
-      .sidebar .sidebar__section .section__item.active {
-        color: #b9b9ff;
-        background-color: #222;
-        text-decoration: underline; }
+      line-height: 24px; }
       .sidebar .sidebar__section .section__item:hover {
         background-color: #333; }
+      .sidebar .sidebar__section .section__item .section__item-title {
+        padding-left: 10px; }
+    .sidebar .sidebar__section .section__dropdown {
+      background-color: #111;
+      max-height: 0px;
+      transition: max-height .1s linear;
+      -webkit-transition: max-height .1s linear;
+      overflow: hidden; }
+      .sidebar .sidebar__section .section__dropdown.show {
+        max-height: 200px; }
+      .sidebar .sidebar__section .section__dropdown .dropdown__item {
+        padding-left: 20px; }
 
 .mod-index {
   float: left;

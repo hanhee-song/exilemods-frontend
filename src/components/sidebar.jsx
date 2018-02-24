@@ -1,12 +1,20 @@
 import React from 'react';
+import SidebarItem from './sidebar_item';
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       categories: {
-        Weapons: ["Daggers", "Claws", "Wands", "Scepters", "1H Swords", "1H Axes", "1H Maces"],
-        Armor: ["Chests", "Helms"]
+        Weapons: {
+          "One Hand": ["Claw", "Dagger", "Wand", "Mace", "Scepter", "Sword", "Axe"],
+          "Two Hand": ["Bow", "Quiver", "Staff", "Mace", "Sword", "Axe"]
+        },
+        Armor: {
+          Chest: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
+          Helm: [],
+          Boots: [],
+        }
       }
     };
     this.handleClick = this.handleClick.bind(this);
@@ -21,21 +29,19 @@ class Sidebar extends React.Component {
   render () {
     const cats = this.state.categories;
     const renderedCats = Object.keys(cats).map(cat => {
-      const catItems = cats[cat].map(item => {
-        const active = this.props.currentItem === item ? "active" : "";
-        return (
-          <div className={`section__item ${active}`}
-            key={item}
-            onClick={this.handleClick(item)}>
-            {item}
-          </div>
-        );
+      const subCats = Object.keys(cats[cat]).map(subCat => {
+        return <SidebarItem
+          key={subCat}
+          subCat={subCat}
+          items={cats[cat][subCat]}
+          selectItem={this.handleClick}
+          currentItem={this.props.currentItem}/>;
       });
       
       return (
         <div className="sidebar__section" key={cat}>
           <div className="section__title">{cat}</div>
-          {catItems}
+          {subCats}
         </div>
       );
     });

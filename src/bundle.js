@@ -19762,6 +19762,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _sidebar_item = __webpack_require__(121);
+
+var _sidebar_item2 = _interopRequireDefault(_sidebar_item);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -19780,8 +19784,15 @@ var Sidebar = function (_React$Component) {
 
     _this.state = {
       categories: {
-        Weapons: ["Daggers", "Claws", "Wands", "Scepters", "1H Swords", "1H Axes", "1H Maces"],
-        Armor: ["Chests", "Helms"]
+        Weapons: {
+          "One Hand": ["Claw", "Dagger", "Wand", "Mace", "Scepter", "Sword", "Axe"],
+          "Two Hand": ["Bow", "Quiver", "Staff", "Mace", "Sword", "Axe"]
+        },
+        Armor: {
+          Chest: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
+          Helm: [],
+          Boots: []
+        }
       }
     };
     _this.handleClick = _this.handleClick.bind(_this);
@@ -19789,47 +19800,45 @@ var Sidebar = function (_React$Component) {
   }
 
   _createClass(Sidebar, [{
-    key: "handleClick",
+    key: 'handleClick',
     value: function handleClick(item) {
       var _this2 = this;
 
       return function () {
-        _this2.props.history.push("/" + item);
+        _this2.props.history.push('/' + item);
       };
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       var _this3 = this;
 
       var cats = this.state.categories;
       var renderedCats = Object.keys(cats).map(function (cat) {
-        var catItems = cats[cat].map(function (item) {
-          var active = _this3.props.currentItem === item ? "active" : "";
-          return _react2.default.createElement(
-            "div",
-            { className: "section__item " + active,
-              key: item,
-              onClick: _this3.handleClick(item) },
-            item
-          );
+        var subCats = Object.keys(cats[cat]).map(function (subCat) {
+          return _react2.default.createElement(_sidebar_item2.default, {
+            key: subCat,
+            subCat: subCat,
+            items: cats[cat][subCat],
+            selectItem: _this3.handleClick,
+            currentItem: _this3.props.currentItem });
         });
 
         return _react2.default.createElement(
-          "div",
-          { className: "sidebar__section", key: cat },
+          'div',
+          { className: 'sidebar__section', key: cat },
           _react2.default.createElement(
-            "div",
-            { className: "section__title" },
+            'div',
+            { className: 'section__title' },
             cat
           ),
-          catItems
+          subCats
         );
       });
 
       return _react2.default.createElement(
-        "div",
-        { className: "sidebar" },
+        'div',
+        { className: 'sidebar' },
         renderedCats
       );
     }
@@ -25695,6 +25704,98 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SidebarItem = function (_React$Component) {
+  _inherits(SidebarItem, _React$Component);
+
+  function SidebarItem(props) {
+    _classCallCheck(this, SidebarItem);
+
+    // this.props = {
+    //   subCat: String,
+    //   items: Array,
+    // };
+    var _this = _possibleConstructorReturn(this, (SidebarItem.__proto__ || Object.getPrototypeOf(SidebarItem)).call(this, props));
+
+    _this.state = {
+      showDropdown: false
+    };
+    _this.toggleDropdown = _this.toggleDropdown.bind(_this);
+    _this.renderDropdown = _this.renderDropdown.bind(_this);
+    return _this;
+  }
+
+  _createClass(SidebarItem, [{
+    key: "toggleDropdown",
+    value: function toggleDropdown() {
+      this.setState({ showDropdown: !this.state.showDropdown });
+    }
+  }, {
+    key: "renderDropdown",
+    value: function renderDropdown() {
+      var _this2 = this;
+
+      var dropdownItems = this.props.items.map(function (item) {
+        var active = _this2.props.currentItem === item ? "active" : "";
+        return _react2.default.createElement(
+          "div",
+          { className: "dropdown__item selectable " + active,
+            onClick: _this2.props.selectItem(item),
+            key: item },
+          item
+        );
+      });
+      return _react2.default.createElement(
+        "div",
+        { className: "section__dropdown " + (this.state.showDropdown && "show") },
+        dropdownItems
+      );
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "section__item" },
+        _react2.default.createElement(
+          "div",
+          { className: "section__item-title selectable", onClick: this.toggleDropdown },
+          this.props.subCat
+        ),
+        this.renderDropdown()
+      );
+    }
+  }]);
+
+  return SidebarItem;
+}(_react2.default.Component);
+
+exports.default = SidebarItem;
 
 /***/ })
 /******/ ]);
