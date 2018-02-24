@@ -192,13 +192,13 @@ body {
   }
 }
 
-// MOD INDEX ==================================
+// MOD MAIN ==================================
 
-.mod-index {
+.mod-main {
   float: left;
   width: calc(100% - 200px);
   
-  .mod-index__name {
+  .mod-main__name {
     font-size: 22px;
     color: $tan;
   }

@@ -143,10 +143,10 @@ body {
       .sidebar .sidebar__section .section__dropdown .dropdown__item {
         padding-left: 20px; }
 
-.mod-index {
+.mod-main {
   float: left;
   width: calc(100% - 200px); }
-  .mod-index .mod-index__name {
+  .mod-main .mod-main__name {
     font-size: 22px;
     color: #dfcf99; }
 

@@ -19927,9 +19927,9 @@ var _sidebar_container = __webpack_require__(98);
 
 var _sidebar_container2 = _interopRequireDefault(_sidebar_container);
 
-var _mod_index_container = __webpack_require__(102);
+var _mod_main_container = __webpack_require__(181);
 
-var _mod_index_container2 = _interopRequireDefault(_mod_index_container);
+var _mod_main_container2 = _interopRequireDefault(_mod_main_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19938,6 +19938,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import ModIndexContainer from './components/mods/mod_index_container';
+
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
@@ -19960,7 +19962,7 @@ var App = function (_React$Component) {
           'ExileMods.com | Path of Exile Item Affixes'
         ),
         _react2.default.createElement(_sidebar_container2.default, null),
-        _react2.default.createElement(_mod_index_container2.default, null)
+        _react2.default.createElement(_mod_main_container2.default, null)
       );
     }
   }]);
@@ -22203,12 +22205,7 @@ var ModIndex = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { className: "mod-index" },
-        _react2.default.createElement(
-          "div",
-          { className: "mod-index__name" },
-          "Mod Index ",
-          this.props.currentItem
-        )
+        "Mod Index"
       );
     }
   }]);
@@ -24651,6 +24648,97 @@ var fetchItem = exports.fetchItem = function fetchItem(item) {
     //   );
   };
 };
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _mod_index_container = __webpack_require__(102);
+
+var _mod_index_container2 = _interopRequireDefault(_mod_index_container);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ModMain = function (_React$Component) {
+  _inherits(ModMain, _React$Component);
+
+  function ModMain() {
+    _classCallCheck(this, ModMain);
+
+    return _possibleConstructorReturn(this, (ModMain.__proto__ || Object.getPrototypeOf(ModMain)).apply(this, arguments));
+  }
+
+  _createClass(ModMain, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'mod-main' },
+        _react2.default.createElement(
+          'div',
+          { className: 'mod-main__name' },
+          'Mod Main ',
+          this.props.currentItem
+        ),
+        _react2.default.createElement(_mod_index_container2.default, null)
+      );
+    }
+  }]);
+
+  return ModMain;
+}(_react2.default.Component);
+
+exports.default = ModMain;
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mod_main = __webpack_require__(180);
+
+var _mod_main2 = _interopRequireDefault(_mod_main);
+
+var _reactRedux = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    currentItem: state.currentItem
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_mod_main2.default);
 
 /***/ })
 /******/ ]);
