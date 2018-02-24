@@ -19073,8 +19073,8 @@ var App = function (_React$Component) {
           { className: 'title' },
           'ExileMods.com | Path of Exile Item Affixes'
         ),
-        _react2.default.createElement(_reactRouterDom.Route, { component: _sidebar_container2.default, path: '/:currentItem' }),
-        _react2.default.createElement(_reactRouterDom.Route, { component: _mod_index_container2.default, path: '/:currentItem' })
+        _react2.default.createElement(_reactRouterDom.Route, { component: _sidebar_container2.default, path: '/:currentItem?' }),
+        _react2.default.createElement(_reactRouterDom.Route, { component: _mod_index_container2.default, path: '/:currentItem?' })
       );
     }
   }]);

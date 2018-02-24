@@ -13,8 +13,8 @@ class App extends React.Component {
         <div className="title">
           ExileMods.com | Path of Exile Item Affixes
         </div>
-        <Route component={SidebarContainer} path="/:currentItem" />
-        <Route component={ModIndexContainer} path="/:currentItem" />
+        <Route component={SidebarContainer} path="/:currentItem?" />
+        <Route component={ModIndexContainer} path="/:currentItem?" />
       </div>
     );
   }
