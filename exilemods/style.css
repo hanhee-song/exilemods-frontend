@@ -1,0 +1,404 @@
+body {
+	font-feature-settings: "liga" 0;
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+table {
+	padding: 1px;
+	width: 100%;
+	min-width: 650px;
+	max-width: 650px;
+}
+
+td {
+	padding: 3px;
+}
+
+@font-face {
+    font-family: 'fontin_smallcapssmallcaps';
+    src: url('../fontin-smallcaps-webfont-webfont.eot');
+    src: url('../fontin-smallcaps-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontin-smallcaps-webfont-webfont.woff') format('woff'),
+         url('../fontin-smallcaps-webfont-webfont.ttf') format('truetype'),
+         url('../fontin-smallcaps-webfont-webfont.svg#fontin_smallcapssmallcaps') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../icomoon.eot?nkd2v5');
+	src:url('../icomoon.eot?#iefixnkd2v5') format('embedded-opentype'),
+		url('../icomoon.ttf?nkd2v5') format('truetype'),
+		url('../icomoon.woff?nkd2v5') format('woff'),
+		url('../icomoon.svg?nkd2v5#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.title {
+	font-family: fontin_smallcapssmallcaps, Georgia, Serif;
+	font-size: 32pt;
+}
+
+h2 {
+	font-family: fontin_smallcapssmallcaps, Georgia, Serif;
+	font-size: 24pt;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+a {
+	font-family: fontin_smallcapssmallcaps, Georgia, Serif;
+	font-size: 14pt;
+	padding-right: 4px;
+}
+
+.current {
+	text-decoration: underline;
+}
+
+a:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.slotselector {
+	position: fixed;
+	left: 15px;
+	top: 72px;
+}
+
+.inner {
+	width: auto;
+	position: absolute;
+	left: 275px;
+	top: 71px;
+}
+
+.weapons, .armor, .accessories, .miscellaneous {
+	position: relative;
+	display: block;
+	padding-bottom: 10px;
+	padding-top: 28px;
+}
+
+.weapons:before, .armor:before, .accessories:before, .miscellaneous:before {
+	position: absolute;
+	top: 0px;
+	font-family: fontin_smallcapssmallcaps, Georgia, Serif;
+	font-size: 16pt;
+}
+
+.weapons:before {
+	content: 'Weapons\003A';
+	left: 0px;
+}
+
+.armor:before {
+	content: 'Armor\003A';
+	left: 0px;
+}
+
+.accessories:before {
+	content: 'Accessories\003A';
+	left: 0px;
+}
+
+.miscellaneous:before {
+	content: 'Miscellaneous\003A';
+	left: 0px;
+}
+
+.modname {
+	display: table-row;
+	width: 900px;
+	font-family: Verdana, Roboto, Arial, sans-serif;
+	font-size: 10pt;
+}
+
+.modname:hover {
+	cursor: hand;
+	cursor: pointer;
+}
+
+.ilvl, .value, .name {
+	display: table-cell;
+	font-family: Consolas, "Lucida Console", "Courier New", monospace;
+	font-size: 12pt;
+}
+
+.row {
+	display: table-row;
+	position: relative;
+	width: 60%;
+}
+
+.ilvl {
+	position: relative;
+	width: 3%;
+	text-align: center;
+}
+
+.ilvl:before {
+	content: 'ilvl '
+}
+
+.value {
+	position: relative;
+	width: 70%;
+	padding-left: 7px;
+}
+
+.name {
+	position: relative;
+	min-width: 160px;
+	padding-left: 7px;
+}
+
+.modgroup {
+	display: table;
+	width: 900px;
+	margin-top: 10px;
+}
+
+.header {
+	display: table-row;
+	width: 900px;
+	font-family: fontin_smallcapssmallcaps, Georgia, Serif;
+	font-size: 24pt;
+}
+
+.inline {
+	display: inline;
+}
+
+.tab:after {
+	content: "\0009";
+	white-space: pre;
+}
+
+#goTop:after {
+	font-family: FontAwesome;
+	content: '\f0d8';
+	position: relative;
+	font-size: 32pt;
+	font-weight: 700;
+	left: 13px;
+}
+
+#goTop:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+#goTop {
+	border-radius: 10px;
+	width: 50px;
+	height: 50px;
+    padding: 5px;
+    position: fixed;
+    bottom: -100px;
+    right: 10px;
+}
+
+#changetheme:after {
+	font-family: icomoon;
+	content: '\e600';
+	position: relative;
+	font-size: 16pt;
+	left: 2px;
+	top: 2px;
+}
+
+#changetheme:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+#changetheme {
+	border-radius: 25px;
+	width: 25px;
+	height: 25px;
+    padding: 5px;
+    position: absolute;
+    bottom: 60px;
+    right: 10px;
+}
+
+.inactive {
+	opacity: 0.5;
+	cursor: auto;
+}
+
+@media (min-width: 1600px) {
+	.prefix {
+		display: inline-block;
+	}
+	
+	.suffix {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+@media (max-width: 50em) and (orientation: portrait) {	
+	table {
+		width: 100%;
+	}
+	
+	a {
+		padding-top: 1px;
+		padding-left: 2px;
+		padding-right: 3px;
+		border-radius: 4px;
+	}
+	
+	.weapons, .armor, .accessories, .miscellaneous {
+		display: inline-block;
+		vertical-align: top;
+		padding-right: 10px;
+	}
+	
+	.inner {
+		width: 100%;
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+	
+	.button {
+		margin-bottom: 7px;
+	}
+	
+	.slotselector {
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+
+}
+
+@media (max-width: 24.5em) and (orientation: portrait) {	
+	.weapons, .armor, .accessories, .miscellaneous {
+		left: 0px;
+		padding-top: 0;
+	}
+	
+	.title {
+		font-size: 18pt;
+	}
+	
+	.header {
+		font-size: 16pt;
+	}
+	
+	h2 {
+		font-size: 18pt;
+	}
+
+	table {
+		width: 100%;
+	}
+	
+	.inner {
+		width: 100%;
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+	
+	.weapons:before, .armor:before, .accessories:before, .miscellaneous:before {
+		display: none;
+	}
+	
+	a {
+		padding-top: 1px;
+		padding-left: 2px;
+		padding-right: 3px;
+		border-radius: 4px;
+	}
+	
+	.button {
+		margin-bottom: 7px;
+	}
+	
+	#goTop:before {
+		font-size: 32pt;
+		font-weight: 700;
+		left: 9px;
+		top: -5px;
+	}
+	
+	#goTop {
+		width: 40px;
+		height: 40px;
+		opacity: 0.5;
+	}
+	
+	.slotselector {
+		position: relative;
+		left: 0px;
+		top: 10px;
+	}
+}
+
+@media (max-width: 64em) and (orientation: landscape) {
+	table {
+		width: 100%;
+	}
+	
+	.inner {
+		width: 100%;
+	}
+	
+	a {
+		padding-top: 1px;
+		padding-left: 2px;
+		padding-right: 3px;
+		border-radius: 4px;
+	}
+	
+	.button {
+		margin-bottom: 7px;
+	}
+}
+
+@media (max-height: 780px) and (orientation: landscape) {
+	.title {
+		font-size: 18pt;
+	}
+
+	.slotselector {
+		transform: scale(0.9);
+		left: 10px;
+		top: 20px;
+	}
+	
+	.inner {
+		top: 51px;
+		left: 250px;
+	}
+	
+	td {
+		font-size: 80%;
+	}
+	
+	.ilvl, .value, .name {
+		font-size: 10pt;
+	}
+	
+	h2 {
+		font-size: 16pt;
+	}
+}

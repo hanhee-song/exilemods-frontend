@@ -1,0 +1,95 @@
+.title {
+	text-shadow: 1px 1px 0px #000;
+	color: #dfcf99;
+}
+
+h2 {
+	text-shadow: 1px 1px 0px #000;
+	color: #dfcf99;
+}
+
+body {
+	background-color: #111;
+	color: #c5b787;
+}
+
+a {
+	color: #8888ff;
+}
+
+.current {
+	color: #b9b9ff;
+}
+
+.weapons:before, .armor:before, .accessories:before, .miscellaneous:before {
+	color: #af6025;
+}
+
+.modname {
+	background-color: #343434;
+}
+
+.modname:hover {
+	background-color: #414141;
+}
+
+.row {
+	background-color: #272727;
+}
+
+.row:hover {
+	background-color: #343434;
+}
+
+.master {
+	background-color: #1a1a1a;
+}
+
+.master:hover {
+	background-color: #262626;
+}
+
+.header {
+	color: #af6025;
+}
+
+#goTop:after {
+	color: white;
+}
+
+#goTop {
+    background-color: black;
+}
+
+#changetheme:after {
+	color: white;
+}
+
+#changetheme:hover {
+	background-color: #111111;
+}
+
+#changetheme {
+    background-color: black;
+}
+
+@media (max-width: 50em) and (orientation: portrait) {	
+	a {
+		border: 1px solid #8888ff;
+		background-color: #29294d;
+	}
+}
+
+@media (max-width: 24.5em) and (orientation: portrait) {	
+	a {
+		border: 1px solid #8888ff;
+		background-color: #29294d;
+	}
+}
+
+@media (max-width: 64em) and (orientation: landscape) {
+	a {
+		border: 1px solid #8888ff;
+		background-color: #29294d;
+	}
+}

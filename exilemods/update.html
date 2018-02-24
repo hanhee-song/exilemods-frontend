@@ -1,0 +1,160 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<style>
+			li {
+				padding-bottom: 15px;
+			}
+		</style>
+		<script>
+			$(document).ready( function () {
+				var namesArray = [
+					"1h_axes",
+					"1h_maces",
+					"1h_swords",
+					"2h_axes",
+					"2h_maces",
+					"2h_swords",
+					"amulets",
+					"belts",
+					"body_armours_armour",
+					"body_armours_armour_and_energy_shield",
+					"body_armours_armour_and_evasion",
+					"body_armours_armour_and_evasion_and_energy_shield",
+					"body_armours_energy_shield",
+					"body_armours_evasion",
+					"body_armours_evasion_and_energy_shield",
+					"boots",
+					"boots_armour",
+					"boots_armour_and_energy_shield",
+					"boots_armour_and_evasion",
+					"boots_energy_shield",
+					"boots_evasion",
+					"boots_evasion_and_energy_shield",
+					"bows",
+					"chest",
+					"claws",
+					"cobalt_jewels",
+					"crimson_jewels",
+					"daggers",
+					"fishing_rods",
+					"flask-1",
+					"flask-2",
+					"flask-3",
+					"flask-4",
+					"flask-5",
+					"flask-6",
+					"flask-7",
+					"flask-8",
+					"flask-diamond",
+					"flask-hybrid",
+					"flask-life",
+					"flask-mana",
+					"flask-utility",
+					"flasks",
+					"gloves",
+					"gloves_armour",
+					"gloves_armour_and_energy_shield",
+					"gloves_armour_and_evasion",
+					"gloves_energy_shield",
+					"gloves_evasion",
+					"gloves_evasion_and_energy_shield",
+					"helm",
+					"helmets_armour",
+					"helmets_armour_and_energy_shield",
+					"helmets_armour_and_evasion",
+					"helmets_energy_shield",
+					"helmets_evasion",
+					"helmets_evasion_and_energy_shield",
+					"map-1",
+					"map-10",
+					"map-11",
+					"map-12",
+					"map-13",
+					"map-14",
+					"map-15",
+					"map-16",
+					"map-17",
+					"map-18",
+					"map-19",
+					"map-2",
+					"map-20",
+					"map-21",
+					"map-22",
+					"map-23",
+					"map-24",
+					"map-25",
+					"map-26",
+					"map-27",
+					"map-28",
+					"map-29",
+					"map-3",
+					"map-30",
+					"map-31",
+					"map-32",
+					"map-33",
+					"map-34",
+					"map-35",
+					"map-36",
+					"map-37",
+					"map-38",
+					"map-39",
+					"map-4",
+					"map-40",
+					"map-41",
+					"map-42",
+					"map-43",
+					"map-44",
+					"map-45",
+					"map-46",
+					"map-47",
+					"map-48",
+					"map-49",
+					"map-5",
+					"map-6",
+					"map-7",
+					"map-8",
+					"map-9",
+					"maps",
+					"quivers",
+					"rings",
+					"sceptres",
+					"shields",
+					"shields_armour",
+					"shields_armour_and_energy_shield",
+					"shields_armour_and_evasion",
+					"shields_energy_shield",
+					"shields_evasion",
+					"shields_evasion_and_energy_shield",
+					"staves",
+					"thrusting_1h_swords",
+					"viridian_jewels",
+					"wands"
+				];
+				
+				htmlObject = new Object();
+				
+				$.each( namesArray, function (index) {
+					$.ajax({
+					  url: "/mods/" + namesArray[index] + ".html",
+					})
+					.done(function( html ) {
+						htmlObject[namesArray[index]] = html;
+					});
+				});
+				
+				console.log(htmlObject);
+			});
+		</script>
+	</head>
+	<body>
+		<ol>
+			<li>open chrome developer tools (F12)</li>
+			<li>click the console tab</li>
+			<li>right-click where it says <pre>Object {}</pre> and click <pre>Store as global variable</pre></li>
+			<li>type <pre>copy(temp1)</pre> into the console and hit enter</li>
+			<li>paste into a new text document. put <pre>htmlObject = </pre> before the {. save it as data.js</li>
+			<li>overwrite the data.js on the server with this new file</li>
+		</ol>
+	</body>
+</html>
