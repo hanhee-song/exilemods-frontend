@@ -19069,10 +19069,10 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'title' },
-          'ExileMods.com | Path of Exile Item Affixes',
-          _react2.default.createElement(_sidebar_container2.default, null),
-          _react2.default.createElement(_mod_index_container2.default, null)
-        )
+          'ExileMods.com | Path of Exile Item Affixes'
+        ),
+        _react2.default.createElement(_sidebar_container2.default, null),
+        _react2.default.createElement(_mod_index_container2.default, null)
       );
     }
   }]);
@@ -19767,19 +19767,233 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Sidebar = function (_React$Component) {
   _inherits(Sidebar, _React$Component);
 
-  function Sidebar() {
+  function Sidebar(props) {
     _classCallCheck(this, Sidebar);
 
-    return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).call(this, props));
   }
 
   _createClass(Sidebar, [{
     key: "render",
     value: function render() {
+      // INITIAL HARD-CODED INFO FOR SAKE OF STYLING
       return _react2.default.createElement(
         "div",
         { className: "sidebar" },
-        "this is a sidebar"
+        _react2.default.createElement(
+          "div",
+          { className: "sidebar__section" },
+          _react2.default.createElement(
+            "div",
+            { className: "section__title" },
+            "Weapons:"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Daggers"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Claws"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "section__item" },
+            "Other Junk"
+          )
+        )
       );
     }
   }]);
@@ -21169,10 +21383,15 @@ var ModIndex = function (_React$Component) {
   _createClass(ModIndex, [{
     key: 'render',
     value: function render() {
+      // Hardcoded stuff for styling
       return _react2.default.createElement(
         'div',
         { className: 'mod-index' },
-        'this is a mod index'
+        _react2.default.createElement(
+          'div',
+          { className: 'mod-index__name' },
+          '1H Axes'
+        )
       );
     }
   }]);

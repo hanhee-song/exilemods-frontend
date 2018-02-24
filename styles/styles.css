@@ -77,6 +77,29 @@ body {
   color: #dfcf99;
   font-size: 28px;
   padding: 10px;
+  margin-bottom: 20px;
   text-shadow: 1px 1px 0px #000; }
+
+.sidebar {
+  padding-left: 20px;
+  width: 200px;
+  float: left; }
+  .sidebar .sidebar__section {
+    margin-bottom: 10px; }
+    .sidebar .sidebar__section .section__title {
+      color: #af6025;
+      margin-bottom: 8px;
+      font-size: 20px; }
+    .sidebar .sidebar__section .section__item {
+      color: #8888ff;
+      font-size: 17px;
+      line-height: 24px; }
+
+.mod-index {
+  float: left;
+  width: calc(100% - 200px); }
+  .mod-index .mod-index__name {
+    font-size: 22px;
+    color: #dfcf99; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 class ModIndex extends React.Component {
   render () {
+    // Hardcoded stuff for styling
     return (
       <div className="mod-index">
-        this is a mod index
+        <div className="mod-index__name">1H Axes</div>
+        
       </div>
     );
   }

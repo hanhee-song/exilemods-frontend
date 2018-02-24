@@ -11,9 +11,9 @@ class App extends React.Component {
       <div className="app">
         <div className="title">
           ExileMods.com | Path of Exile Item Affixes
-          <SidebarContainer />
-          <ModIndexContainer />
         </div>
+        <SidebarContainer />
+        <ModIndexContainer />
       </div>
     );
   }

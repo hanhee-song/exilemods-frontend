@@ -61,25 +61,25 @@ a {
 /**************************************************/
 
 @font-face {
-    font-family: 'fontin_smallcapssmallcaps';
-    src: url('./fontin-smallcaps-webfont-webfont.eot');
-    src: url('./fontin-smallcaps-webfont-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fontin-smallcaps-webfont-webfont.woff') format('woff'),
-         url('./fontin-smallcaps-webfont-webfont.ttf') format('truetype'),
-         url('./fontin-smallcaps-webfont-webfont.svg#fontin_smallcapssmallcaps') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'fontin_smallcapssmallcaps';
+  src: url('./fontin-smallcaps-webfont-webfont.eot');
+  src: url('./fontin-smallcaps-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+     url('./fontin-smallcaps-webfont-webfont.woff') format('woff'),
+     url('./fontin-smallcaps-webfont-webfont.ttf') format('truetype'),
+     url('./fontin-smallcaps-webfont-webfont.svg#fontin_smallcapssmallcaps') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'icomoon';
-	src:url('./icomoon.eot?nkd2v5');
-	src:url('./icomoon.eot?#iefixnkd2v5') format('embedded-opentype'),
-		url('./icomoon.ttf?nkd2v5') format('truetype'),
-		url('./icomoon.woff?nkd2v5') format('woff'),
-		url('./icomoon.svg?nkd2v5#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'icomoon';
+  src:url('./icomoon.eot?nkd2v5');
+  src:url('./icomoon.eot?#iefixnkd2v5') format('embedded-opentype'),
+    url('./icomoon.ttf?nkd2v5') format('truetype'),
+    url('./icomoon.woff?nkd2v5') format('woff'),
+    url('./icomoon.svg?nkd2v5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 $tan: #dfcf99;
@@ -100,5 +100,45 @@ body {
   color: $tan;
   font-size: 28px;
   padding: 10px;
+  margin-bottom: 20px;
   text-shadow: 1px 1px 0px #000;
+}
+
+// SIDEBAR ===================================
+
+.sidebar {
+  padding-left: 20px;
+  width: 200px;
+  float: left;
+  // No sticky until we know how long this list is
+  // position: sticky;
+  // top: 0;
+  
+  .sidebar__section {
+    margin-bottom: 10px;
+    
+    .section__title {
+      color: $brown;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+    
+    .section__item {
+      color: $blue;
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+}
+
+// MOD INDEX ==================================
+
+.mod-index {
+  float: left;
+  width: calc(100% - 200px);
+  
+  .mod-index__name {
+    font-size: 22px;
+    color: $tan;
+  }
 }
