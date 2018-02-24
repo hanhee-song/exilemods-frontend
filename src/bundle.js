@@ -22205,7 +22205,47 @@ var ModIndex = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { className: "mod-index" },
-        "Mod Index"
+        _react2.default.createElement(
+          "div",
+          { className: "mod-index__title" },
+          "Prefixes"
+        ),
+        _react2.default.createElement(
+          "table",
+          { className: "table" },
+          _react2.default.createElement(
+            "tbody",
+            null,
+            _react2.default.createElement(
+              "tr",
+              null,
+              _react2.default.createElement(
+                "td",
+                { colSpan: "3", className: "table__mod-type table__cell" },
+                "+# to max life"
+              )
+            ),
+            _react2.default.createElement(
+              "tr",
+              { className: "table__mod-stat" },
+              _react2.default.createElement(
+                "td",
+                { className: "table__ilvl table__cell" },
+                "1"
+              ),
+              _react2.default.createElement(
+                "td",
+                { className: "table__value table__cell" },
+                "3 to 9"
+              ),
+              _react2.default.createElement(
+                "td",
+                { className: "table__name table__cell" },
+                "Hale"
+              )
+            )
+          )
+        )
       );
     }
   }]);
