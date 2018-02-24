@@ -5,7 +5,7 @@ class Sidebar extends React.Component {
     super(props);
     this.state = {
       categories: {
-        Weapons: ["Daggers", "Claws", "Bows"],
+        Weapons: ["Daggers", "Claws", "Wands", "Scepters", "1H Swords", "1H Axes", "1H Maces"],
         Armor: ["Chests", "Helms"]
       }
     };

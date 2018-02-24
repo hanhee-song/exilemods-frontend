@@ -74,6 +74,7 @@ body {
 
 .title {
   font-variant: small-caps;
+  user-select: none;
   color: #dfcf99;
   font-size: 28px;
   padding: 10px;
@@ -81,6 +82,7 @@ body {
   text-shadow: 1px 1px 0px #000; }
 
 .sidebar {
+  user-select: none;
   padding-left: 20px;
   padding-right: 20px;
   width: 200px;
@@ -97,11 +99,12 @@ body {
       font-size: 17px;
       line-height: 20px;
       padding: 0 10px; }
+      .sidebar .sidebar__section .section__item.active {
+        color: #b9b9ff;
+        background-color: #222;
+        text-decoration: underline; }
       .sidebar .sidebar__section .section__item:hover {
         background-color: #333; }
-      .sidebar .sidebar__section .section__item .active {
-        color: #b9b9ff;
-        text-decoration: underline; }
 
 .mod-index {
   float: left;

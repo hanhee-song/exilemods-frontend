@@ -97,6 +97,7 @@ body {
 
 .title {
   font-variant: small-caps;
+  user-select: none;
   color: $tan;
   font-size: 28px;
   padding: 10px;
@@ -107,6 +108,7 @@ body {
 // SIDEBAR ===================================
 
 .sidebar {
+  user-select: none;
   padding-left: 20px;
   padding-right: 20px;
   width: 200px;
@@ -131,13 +133,14 @@ body {
       line-height: 20px;
       padding: 0 10px;
       
-      &:hover {
-        background-color: #333;
+      &.active {
+        color: $light-blue;
+        background-color: #222;
+        text-decoration: underline;
       }
       
-      .active {
-        color: $light-blue;
-        text-decoration: underline;
+      &:hover {
+        background-color: #333;
       }
     }
   }

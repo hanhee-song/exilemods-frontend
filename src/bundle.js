@@ -19780,7 +19780,7 @@ var Sidebar = function (_React$Component) {
 
     _this.state = {
       categories: {
-        Weapons: ["Daggers", "Claws", "Bows"],
+        Weapons: ["Daggers", "Claws", "Wands", "Scepters", "1H Swords", "1H Axes", "1H Maces"],
         Armor: ["Chests", "Helms"]
       }
     };
@@ -21172,7 +21172,9 @@ var _reactRouter = __webpack_require__(120);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  return {};
+  return {
+    currentItem: ownProps.match.params.currentItem
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -21213,10 +21215,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ModIndex = function (_React$Component) {
   _inherits(ModIndex, _React$Component);
 
-  function ModIndex() {
+  function ModIndex(props) {
     _classCallCheck(this, ModIndex);
 
-    return _possibleConstructorReturn(this, (ModIndex.__proto__ || Object.getPrototypeOf(ModIndex)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ModIndex.__proto__ || Object.getPrototypeOf(ModIndex)).call(this, props));
   }
 
   _createClass(ModIndex, [{
@@ -21229,7 +21231,7 @@ var ModIndex = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'mod-index__name' },
-          '1H Axes'
+          this.props.currentItem
         )
       );
     }
