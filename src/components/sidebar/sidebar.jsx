@@ -7,14 +7,29 @@ class Sidebar extends React.Component {
     this.state = {
       categories: {
         Weapons: {
-          "One Hand": ["Claw", "Dagger", "Wand", "Mace", "Scepter", "Sword", "Axe"],
-          "Two Hand": ["Bow", "Quiver", "Staff", "Mace", "Sword", "Axe"]
+          "One Hand": {
+            "Claw": [25, 26, 27],
+            "Dagger": [29, 30, 31],
+            "Wand": [108, 109, 110],
+            "Mace": [53, 54, 55],
+            "Scepter": [79, 80, 81],
+            "Sword": [98, 99, 100],
+            "Axe": [9, 10, 11],
+          },
+          "Two Hand": {
+            "Bow": [],
+            "Quiver": [],
+            "Staff": [88, 89, 90],
+            "Mace": [],
+            "Sword": [],
+            "Axe": [],
+          }
         },
-        Armor: {
-          Chest: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
-          Helm: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
-          Boots: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
-        }
+        // Armor: {
+        //   Chest: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
+        //   Helm: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
+        //   Boots: ["AR", "ES", "EVA", "AR & ES", "AR & EVA", "ES & EVA"],
+        // }
       }
     };
   }

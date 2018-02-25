@@ -5,7 +5,7 @@ class SidebarSection extends React.Component {
     super(props);
     // this.props = {
     //   subCat: String,
-    //   items: Array,
+    //   items: Objects,
     // };
     this.state = {
       showDropdown: false
@@ -21,18 +21,19 @@ class SidebarSection extends React.Component {
   
   handleClickItem(item) {
     return () => {
-      this.props.receiveCurrentItem(item);
+      const tagIds = this.props.items[item];
+      this.props.receiveCurrentItem({
+        category: this.props.subCat,
+        item,
+        tagIds,
+      });
     };
   }
   
   renderDropdown() {
-    const dropdownItems = this.props.items.map(item => {
-      // TODO: indicate which section is active once we have ID's, rather
-      // than strings, to indicate the current item.
-      // const active = this.props.currentItem === item ? "active" : "";
-      const active = "";
+    const dropdownItems = Object.keys(this.props.items).map(item => {
       return (
-        <div className={`dropdown__item selectable ${active}`}
+        <div className={`dropdown__item selectable`}
           onClick={this.handleClickItem(item)}
           key={item} >
           {item}

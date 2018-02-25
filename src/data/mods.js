@@ -1,4 +1,4 @@
-const mods = {
+export default {
     "1": {
         "id": 1,
         "modTitle": "AbyssAccuracyIfNoEnemySlainRecentlyJewel1",

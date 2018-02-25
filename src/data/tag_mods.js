@@ -1,4 +1,4 @@
-const tagMods = {
+export default {
   "1": [
     205,
     223,

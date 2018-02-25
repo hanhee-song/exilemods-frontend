@@ -1,4 +1,4 @@
-const tags = {
+export default {
   1: 'abyss_jewel_caster',
   2: 'abyss_jewel_melee',
   3: 'abyss_jewel_ranged',

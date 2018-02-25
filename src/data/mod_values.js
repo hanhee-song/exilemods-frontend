@@ -1,4 +1,4 @@
-const modValues = {
+export default {
     "1": {
         "id": 1,
         "modId": 1,

@@ -10,7 +10,7 @@ class ModMain extends React.Component {
     return (
       <div className="mod-main">
         <div className="mod-main__name">
-          Mod Main {this.props.currentItem}
+          {`${this.props.currentItem.category || ""} | ${this.props.currentItem.item || ""}`}
         </div>
         
         {
