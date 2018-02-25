@@ -1,11 +1,17 @@
 export const RECEIVE_CURRENT_ITEM = "RECEIVE_CURRENT_ITEM";
 
 export const receiveCurrentItem = (item) => {
+  // item: {
+  //   category: String,
+  //   item: String,
+  //   tagIds: Array,
+  // }
   return {
     type: RECEIVE_CURRENT_ITEM,
     item,
   };
 };
+
 
 // NB: In the future, I may differentiate between RECEIVE_CURRENT_ITEM
 // and RECEIVE_ITEM. If I do, RECEIVE_CURRENT_ITEM will be strictly
