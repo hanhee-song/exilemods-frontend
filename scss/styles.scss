@@ -210,9 +210,21 @@ body {
 
 // MOD INDEX ====================================
 
-$table-width: 600px;
-$ilvl-width: 100px;
-$name-width: 160px;
+$table-width-small: 500px;
+$ilvl-width-small: 80px;
+$name-width-small: 150px;
+
+$table-title-small: 23px;
+$table-entry-small: 13px;
+$table-subentry-small: 14px;
+
+$table-width-large: 600px;
+$ilvl-width-large: 100px;
+$name-width-large: 170px;
+
+$table-title-large: 26px;
+$table-entry-large: 15px;
+$table-subentry-large: 16px;
 
 .mod-index {
   float: left;
@@ -220,17 +232,20 @@ $name-width: 160px;
   
   .mod-index__title {
     color: $brown;
-    font-size: 23px;
+    font-size: $table-title-small;
     margin: 20px 0 5px 5px;
   }
 }
 
 .table {
-  width: $table-width;
+  width: $table-width-small;
   color: $tan;
   font-family: sans-serif;
   // This is originally Verdana but it's too wide
-  font-size: 13px;
+  font-size: $table-entry-small;
+  
+  // NB: table__mod-type's height is dicated by line height,
+  // whereas table__mod-stat's height is traditionally calculated with pad + fontsize
   
   .table__mod-type {
     background-color: #333;
@@ -238,7 +253,8 @@ $name-width: 160px;
     padding-left: 8px;
     position: relative;
     border: 2px solid #000;
-    line-height: 17px; // Use line height for this one, not padding
+    line-height: calc(4px + #{$table-entry-small}); // Use line height for this one, not padding
+    overflow: hidden;
     &:hover { background-color: #393939;}
     
     .pin-icon {
@@ -256,29 +272,57 @@ $name-width: 160px;
   .table__mod-stat {
     background-color: #222;
     font-family: 'Inconsolata', monospace;
-    font-size: 14px;
+    font-size: $table-subentry-small;
     &:hover { background-color: #292929; }
     
     .table__cell {
       border: 2px solid #000;
       padding: 3px;
+      overflow: hidden;
     }
   }
   
   .table__ilvl {
     text-align: center;
-    width: $ilvl-width;
+    width: $ilvl-width-small;
     
     &::before { content: "ilvl "; }
   }
   
   .table__value {
-    width: calc(100% - $ilvl-width - $name-width);
+    width: calc(100% - #{$ilvl-width-small} - #{$name-width-small});
     padding-left: 8px;
   }
   
   .table__name {
-    width: $name-width;
+    width: $name-width-small;
     padding-left: 8px;
+  }
+}
+
+// MEDIA QUERIES ==================================================
+
+@media (min-width: 1420px) {
+  .mod-index {
+    .mod-index__title {
+      font-size: $table-title-large;
+    }
+  }
+  
+  .table {
+    width: $table-width-large;
+    font-size: $table-entry-large;
+    
+    .table__mod-type {
+      line-height: calc(4px + #{$table-entry-large});
+    }
+    
+    .table__mod-stat {
+      font-size: $table-subentry-large;
+      
+      .table__ilvl { width: $ilvl-width-large; }
+      .table__value { width: calc(100% - #{$ilvl-width-large} - #{$name-width-large}); }
+      .table__name { width: $name-width-large; }
+    }
   }
 }

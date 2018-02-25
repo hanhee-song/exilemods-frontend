@@ -161,7 +161,7 @@ body {
     margin: 20px 0 5px 5px; }
 
 .table {
-  width: 600px;
+  width: 500px;
   color: #dfcf99;
   font-family: sans-serif;
   font-size: 13px; }
@@ -171,7 +171,8 @@ body {
     padding-left: 8px;
     position: relative;
     border: 2px solid #000;
-    line-height: 17px; }
+    line-height: calc(4px + 13px);
+    overflow: hidden; }
     .table .table__mod-type:hover {
       background-color: #393939; }
     .table .table__mod-type .pin-icon {
@@ -192,17 +193,36 @@ body {
       background-color: #292929; }
     .table .table__mod-stat .table__cell {
       border: 2px solid #000;
-      padding: 3px; }
+      padding: 3px;
+      overflow: hidden; }
   .table .table__ilvl {
     text-align: center;
-    width: 100px; }
+    width: 80px; }
     .table .table__ilvl::before {
       content: "ilvl "; }
   .table .table__value {
-    width: calc(100% - $ilvl-width - $name-width);
+    width: calc(100% - 80px - 150px);
     padding-left: 8px; }
   .table .table__name {
-    width: 160px;
+    width: 150px;
     padding-left: 8px; }
+
+@media (min-width: 1420px) {
+  .mod-index .mod-index__title {
+    font-size: 26px; }
+
+  .table {
+    width: 600px;
+    font-size: 15px; }
+    .table .table__mod-type {
+      line-height: calc(4px + 15px); }
+    .table .table__mod-stat {
+      font-size: 16px; }
+      .table .table__mod-stat .table__ilvl {
+        width: 100px; }
+      .table .table__mod-stat .table__value {
+        width: calc(100% - 100px - 170px); }
+      .table .table__mod-stat .table__name {
+        width: 170px; } }
 
 /*# sourceMappingURL=styles.css.map */
